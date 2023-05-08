@@ -1,0 +1,40 @@
+div
+{
+    border: 2px solid rgb(255, 255, 255);
+    margin: 3% 40px;
+    padding: 15px;
+    background-color: rgba(148, 170, 173, 0.4);
+    border-radius: 15px 15%;
+    box-shadow: 2px 10px #FFF;
+}
+
+#usuario
+{
+    float: left;
+    width: 10%;
+    border-radius: 50%;
+}
+
+/*
+Linear gradient goes brrrr
+*/
+
+body
+{
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #11e2c6, #00ff95);
+}
+
+h1, h2, h3
+{
+    text-shadow: 1px 2px #FFF;
+}
+.tituloPrincipal
+{
+    font-weight: bold;
+}
+.principal
+{
+    background-color: #FFF;
+}
