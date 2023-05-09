@@ -16,31 +16,31 @@
     </p>
     <form id="formulario_inscripcion">
     <p>
-        Nombre: <input type="text" name="nombre" placeholder="Juan">
+        <label for="nombre">Nombre: </label><input type="text" name="nombre" placeholder="Juan" id="nombre">
     </p>
     <p>
-        Apellido: <input type="text" name="apellido" placeholder="Perez">
+        <label for="apellido">Apellido: </label><input type="text" name="apellido" placeholder="Perez" id="apellido">
     </p>
     <p>
         Sexo:
-        Masculino <input type="radio" value="masculino" name="genero">
-        Femenino <input type="radio" value="femenino" name="genero">
-        Prefiero no decirlo <input type="radio" value="noRev" name="genero">
+        <label for="masculino">Masculino </label><input type="radio" value="masculino" name="genero" id="masculino">
+        <label for="femenino">Femenino </label><input type="radio" value="femenino" name="genero" id="femenino">
+    <label for="prefiero_no_decirlo">Prefiero no decirlo </label><input type="radio" value="noRev" name="genero" id="prefiero_no_decirlo">
     </p>
     <p>
-        Edad: <input type="number" name="edad">
+    <label for="edad">Edad: </label><input type="number" name="edad" id="edad">
     </p>
     <p>
-        Email: <input type="email" name="email" placeholder="usuario@email.com">
+    <label for="email">Email: </label><input type="email" name="email" placeholder="usuario@email.com" id="email">
     </p>
     <p>
-        Usuario: <input type="text" name="usuario">
+    <label for="usuario">Usuario: </label><input type="text" name="usuario" id="usuario">
     </p>
     <p>
-        Password: <input type="password" name="password">
+    <label for="password">Password: </label><input type="password" name="password" id="password">
     </p>
     <p>
-        Confirmar Password: <input type="password" name="password2">
+    <label for="confirmar_password">Confirmar Password: <input type="password" name="password2" id="confirmar_password">
     </p>
     <p>
         Tipo de servicio:
@@ -52,14 +52,14 @@
     </p>
     <p>
         Tema:
-        Política <input type="checkbox" name="política" value="política">
-        Negocios <input type="checkbox" name="negocios" value="negocios">
-        Tecnología <input type="checkbox" name="tecnología" value="tecnología">
-        Salud <input type="checkbox" name="salud" value="salud">
+        <label for="política">Política </label><input type="checkbox" name="política" value="política" id="política">
+        <label for="negocios">Negocios </label><input type="checkbox" name="negocios" value="negocios" id="negocios">
+        <label for="tecnología">Tecnología </label><input type="checkbox" name="tecnología" value="tecnología" id="tecnología">
+        <label for="salud">Salud </label><input type="checkbox" name="salud" value="salud" id="salud">
     </p>
     <p>
-        Agregue un comentario:
-        <textarea> </textarea>
+    <label for="comentario">Agregue un comentario:</label>
+        <textarea id="comentario"> </textarea>
     </p>
     <p>
         <button>
