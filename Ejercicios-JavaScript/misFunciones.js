@@ -209,9 +209,19 @@ let openDialog = () => {
     dialog.showModal();
 }
 
+/**
+ * guardado de Listener
+ * @method guardaLS de la función
+ */
+
 let guardaLS = () => {
 
 }
+
+/**
+ * funcion sumar
+ * @method calcularSuma de la función
+ */
 
 function  calcularSuma(){
     var num1, num2;
@@ -220,6 +230,11 @@ function  calcularSuma(){
     document.getElementsByName("sum_total")[0].value = Number(num1) + Number(num2);
 }
 
+/**
+ * funcion restar
+ * @method calcularResta de la función
+ */
+
 function  calcularResta(){
     var num1, num2;
     num1 = document.getElementsByName("res_num1")[0].value;
@@ -227,12 +242,22 @@ function  calcularResta(){
     document.getElementsByName("res_total")[0].value = Number(num1) - Number(num2);
 }
 
+/**
+ * funcion Multiplicar
+ * @method calcularMult de la función
+ */
+
 function  calcularMult(){
     var num1, num2;
     num1 = document.getElementsByName("mul_num1")[0].value;
     num2 = document.getElementsByName("mul_num2")[0].value;
     document.getElementsByName("mul_total")[0].value = Number(num1) * Number(num2);
 }
+
+/**
+ * funcion dividir
+ * @method calcularDiv de la función
+ */
 
 function  calcularDiv(){
     var num1, num2;
