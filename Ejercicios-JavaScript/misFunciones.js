@@ -75,6 +75,12 @@ function convertirGR(id) {
     }
 }
 
+/**
+ * Mostrar/Ocultar elementos del style
+ * @method mostra_ocultar de la función
+ * @param {string} id - Id del elemento input del html
+ */
+
 let mostra_ocultar = (id) => {
     if(valorMO=="val_mostrar"){
         document.getElementById("divMO").style.display = "block";
@@ -83,9 +89,19 @@ let mostra_ocultar = (id) => {
     }
 }
 
+/**
+ * Cargar Listener
+ * @method cargarListenerEjemplo de la función
+ */
+
 let cargarListenerEjemplo = () => {
     document.getElementById("myCanvas").addEventListener("mousemove", dibujarCuadriculado);
 }
+
+/**
+ * Dibujar en la cuadricula canvas
+ * @method dibujarCuadriculado de la función
+ */
 
 let dibujarCuadriculado = () => {
     const canvas = document.getElementById("myCanvas");
@@ -144,6 +160,13 @@ let dibujarCuadriculado = () => {
             ctx.closePath();
 }
 
+/**
+ * Dibujar imagen en lienzo canvas
+ * @method dibujarImagen de la función
+ * @param {float} posX - Coordenadas de aparicion de la imagen
+ * @param {float} posY - Coordenadas de aparicion de la imagen
+ */
+
 let dibujarImagen = (posX, posY) => {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
@@ -166,10 +189,20 @@ let dibujarImagen = (posX, posY) => {
     }
 }
 
+/**
+ * funcion que cierra el dialogo
+ * @method cerrarDialog de la función
+ */
+
 let cerrarDialog = () => {
     const dialog = document.getElementById("myDialog");
     dialog.close;
 }
+
+/**
+ * funcion que abre el dialogo
+ * @method openDialog de la función
+ */
 
 let openDialog = () => {
     const dialog = document.getElementById("myDialog");
