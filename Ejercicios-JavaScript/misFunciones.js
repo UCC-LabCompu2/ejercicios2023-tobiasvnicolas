@@ -7,44 +7,69 @@
  */
 
 /**
- * convercion de unidades
- * @method convertirUnidades
- * @param {string} id - Id del elemento input del html
- * @param {number} valor - Valor del elemento input
+ * Obtiene los elementos de la interfaz de usuario.
+ * @method obtenerElementos
+ * @return {object} Objeto que contiene los elementos de la interfaz de usuario.
  */
-function convertirUnidades(id,valor){
-    if(isNaN(valor)){
-        alert("El valor ingresado es incorrecto")
-        document.lasUnidades.unid_metro.value = "";
-        document.lasUnidades.unid_pulgada.value = "";
-        document.lasUnidades.unid_pie.value = "";
-        document.lasUnidades.unid_yarda.value = "";
+const obtenerElementos = () => {
+    return {
+      unid_metro: document.lasUnidades.unid_metro,
+      unid_pulgada: document.lasUnidades.unid_pulgada,
+      unid_pie: document.lasUnidades.unid_pie,
+      unid_yarda: document.lasUnidades.unid_yarda,
+    };
+  };
+  
+  /**
+   * Muestra una alerta de error cuando el valor ingresado no es un número.
+   * @method mensajeError
+   */
+  const mensajeError = () => {
+    alert("El valor ingresado es incorrecto");
+  };
+  
+  /**
+   * Convierte unidades y asigna los valores a los campos en la interfaz de usuario.
+   * @method convertirUnidades
+   * @param {string} id - Id del elemento input del html.
+   * @param {number} valor - Valor del elemento input.
+   */
+  const convertirUnidades = (id, valor) => {
+    const elementos = obtenerElementos();
+  
+    if (isNaN(valor)) {
+      mensajeError();
+      elementos.unid_metro.value = "";
+      elementos.unid_pulgada.value = "";
+      elementos.unid_pie.value = "";
+      elementos.unid_yarda.value = "";
+    } else {
+      const valorMetro = valor * 0.0254;
+      const valorPulgada = valor * 39.3701;
+      const valorPie = valor * 3.28084;
+      const valorYarda = valor * 1.09361;
+  
+      if (id === "metro") {
+        elementos.unid_pulgada.value = valorPulgada;
+        elementos.unid_pie.value = valorPie;
+        elementos.unid_yarda.value = valorYarda;
+      } else if (id === "pulgada") {
+        elementos.unid_metro.value = valorMetro;
+        elementos.unid_pie.value = valorPie;
+        elementos.unid_yarda.value = valorYarda;
+      } else if (id === "pie") {
+        elementos.unid_pulgada.value = valorPulgada;
+        elementos.unid_metro.value = valorMetro;
+        elementos.unid_yarda.value = valorYarda;
+      } else if (id === "yarda") {
+        elementos.unid_pulgada.value = valorPulgada;
+        elementos.unid_pie.value = valorPie;
+        elementos.unid_metro.value = valorMetro;
+      }
     }
-
-    else if(id==="metro"){
-        document.lasUnidades.unid_pulgada.value = valor*39.3701;
-        document.lasUnidades.unid_pie.value = valor*3.28084;
-        document.lasUnidades.unid_yarda.value = valor*1.09361;
-    }
-
-    else if(id==="pulgada"){
-        document.lasUnidades.unid_metro.value = valor*0.0254;
-        document.lasUnidades.unid_pie.value = valor*0.0833333;
-        document.lasUnidades.unid_yarda.value = valor*0.0277778;
-    }
-
-        else if(id==="pie"){
-        document.lasUnidades.unid_pulgada.value = valor*12;
-        document.lasUnidades.unid_metro.value = valor*0.3048;
-        document.lasUnidades.unid_yarda.value = valor*0.333333;
-    }
-
-        else if(id==="yarda"){
-        document.lasUnidades.unid_pulgada.value = valor*36;
-        document.lasUnidades.unid_pie.value = valor*3;
-        document.lasUnidades.unid_metro.value = valor*0.9144;
-    }
-}
+  };
+  
+  
 
 /**
  * convercion grado - radian
@@ -264,4 +289,49 @@ function  calcularDiv(){
     num1 = document.getElementsByName("div_num1")[0].value;
     num2 = document.getElementsByName("div_num2")[0].value;
     document.getElementsByName("div_total")[0].value = Number(num1) / Number(num2);
+}
+
+/**
+ * Dibuja un círculo y un cuadrado en un lienzo (canvas).
+ * @method dibujarCirCuad
+ */
+
+function dibujarCirCuad() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    var xMax = canvas.width;
+    var yMax = canvas.height;
+    var margen = 5;
+    ctx.fillStyle = "#333899";
+    ctx.fillRect(0+margen, yMax-40-margen, 40, 40);
+
+    ctx.arc(xMax/2, yMax/2, 20, 0, 2*Math.PI);
+    ctx.stroke();
+    ctx.fillStyle = "#000"
+    ctx.fill();
+}
+
+var bandera; //no es un buena practica.
+function dibujar(event) {
+    var canvas = document.getElementById("canvasAdibujar");
+    var ctx = canvas.getContext("2d");
+
+    var posX = event.clientX;
+    var posY = event.clientY;
+    console.log(posX,posY);
+
+    canvas.onmousedown = function() {bandera=true};
+    canvas.onmouseup = function() {bandera=false};
+
+    if(bandera){
+        ctx.fillRect(posX, posY, 5, 5);
+        ctx.fill;
+    }
+}
+
+function limpiarCanvas() {
+    var canvas = document.getElementById("canvasAdibujar");
+    var ctx = canvas.getContext("2d");
+
+    canvas.width = canvas.width;
 }
